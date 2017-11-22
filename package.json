@@ -4,7 +4,8 @@
   "description": "Um projeto para exibir o valor das cotações de biticoin nas exchanges brasileiras.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "browserify src/js/app.js -t babelify -o build/js/script.js"
   },
   "author": "Alex Miranda",
   "license": "ISC",
