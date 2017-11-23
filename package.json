@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "build": "npm run build-js && npm run build-css && cp src/index.html build/",
     "build-html" : "cp src/index.html build/",
     "build-js": "browserify src/js/app.js -t babelify -o build/js/script.js",
