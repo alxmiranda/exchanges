@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "npm run build-js && npm run build-css",
+    "build": "npm run build-js && npm run build-css && cp src/index.html build/",
+    "build-html" : "cp src/index.html build/",
     "build-js": "browserify src/js/app.js -t babelify -o build/js/script.js",
     "build-css": "stylus src/stylus/list-exchanges.styl -o build/css/style.css",
     "preinstall": "npm install -g stylus && npm install -g browserify && mkdir build\\js build\\css"
