@@ -7,6 +7,18 @@
   <title>Document</title>
 </head>
 <body>
-  
+
+  <main id="app">
+    <ul class="list-exchanges">
+      <li v-for="exchange in exchanges">
+        <hgroup>
+          <h1>{{ exchange.name }}</h1>
+          <h2>{{ exchange.last }}</h2>
+        </hgroup>
+      </li>
+    </ul>
+  </main>
+
+  <script src="./build/js/script.js"></script>
 </body>
 </html>
