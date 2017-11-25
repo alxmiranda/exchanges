@@ -16,7 +16,7 @@
         <div class="modal__content">
           <h2 class="title">
             <span>O valor da sua compra é de</span>
-            {{ total }}
+            <small>R$</small>{{ total }}
           </h2>
           <nav class="modal__actions">
             <button class="button" @click="show = !show">voltar</button>
@@ -36,7 +36,7 @@
 
           <h2 class="title">
             <span>ultima cotação</span>
-            {{ exchange.last }}
+            <small>R$</small>{{ exchange.last }}
           </h2>
         </hgroup>
 

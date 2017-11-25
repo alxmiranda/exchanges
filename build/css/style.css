@@ -8,6 +8,11 @@ body {
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
+small {
+  font-size: 70%;
+  margin: 0 4px;
+  opacity: 0.5;
+}
 input,
 button {
   outline: none;
@@ -63,7 +68,7 @@ input {
 .title span {
   display: block;
   font-size: 12px;
-  opacity: 0.75;
+  opacity: 0.5;
 }
 .modal {
   position: absolute;
