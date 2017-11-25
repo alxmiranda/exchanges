@@ -1,6 +1,32 @@
-@import 'reset'
+.list-exchanges
+  width: 100%
+  max-width 700px
+  margin: 0 2%
+  display: flex
+  list-style: none
+  color: #232323
+  flex-flow: column wrap
+  align-items: center
 
-body
-  background: #242424
-  height: 100vh
-  width: 100vw
+.list-exchanges__item
+  width: 100%
+  background: #f8dd00
+  padding: 20px 10px
+  margin-bottom: 10px
+  border-bottom: 3px solid rgba(0,0,0,.2)
+
+  .title:first-child
+    &:after
+      content: ''
+      display: block
+      margin: 10px 0
+      height: 1px
+      background: rgba(0,0,0, .2)
+
+.listexchange__qtd
+  margin-top: 20px
+  display: flex
+  justify-content: flex-end
+
+  .button
+    margin-left: 10px

@@ -8,9 +8,10 @@
     "start": "node server.js",
     "build": "npm run build-js && npm run build-css && cp src/index.html build/",
     "w-js": "watchify src/js/app.js -t babelify -o build/js/script.js",
+    "w-css": "stylus -w src/stylus/style.styl -o build/css/style.css",
     "build-html": "cp src/index.html build/",
     "build-js": "browserify src/js/app.js -t babelify -o build/js/script.js",
-    "build-css": "stylus src/stylus/list-exchanges.styl -o build/css/style.css",
+    "build-css": "stylus src/stylus/style.styl -o build/css/style.css",
     "preinstall": "npm install -g stylus && npm install -g browserify && mkdir build\\js build\\css"
   },
   "author": "Alex Miranda",
