@@ -12277,6 +12277,10 @@ var _listingExchanges = require('./listingExchanges');
 
 var _listingExchanges2 = _interopRequireDefault(_listingExchanges);
 
+var _result2 = require('./result');
+
+var _result3 = _interopRequireDefault(_result2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.use(_vueResource2.default);
@@ -12286,7 +12290,9 @@ var app = new _vue2.default({
   el: "#app",
 
   data: {
-    exchanges: null
+    exchanges: null,
+    show: false,
+    total: null
   },
 
   created: function created() {
@@ -12298,13 +12304,22 @@ var app = new _vue2.default({
         _this.exchanges = list.orderList();
       });
     }, function (error) {
-      consoel.log(error);
+      console.log(error);
     });
+  },
+
+  methods: {
+    result: function result(event) {
+      var qtd = event.target.parentElement.querySelector("input").value;
+      var btc = event.target.dataset.value;
+      var fun = new _result3.default(qtd, btc);
+      this.total = fun.printResult();
+    }
   }
 });
 
-},{"../../node_modules/vue-resource/dist/vue-resource":2,"../../node_modules/vue/dist/vue":3,"./listingExchanges":5}],5:[function(require,module,exports){
-"use strict";
+},{"../../node_modules/vue-resource/dist/vue-resource":2,"../../node_modules/vue/dist/vue":3,"./listingExchanges":5,"./result":6}],5:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -12322,18 +12337,25 @@ var listingExchanges = function () {
   }
 
   _createClass(listingExchanges, [{
-    key: "orderList",
+    key: 'orderList',
     value: function orderList() {
       var arr = [];
+
       for (var item in this.data) {
         arr.push({
-          name: "" + item,
+          name: '' + item,
           last: this.data[item].last
         });
       }
+
       return arr.sort(function (a, b) {
         return a.last - b.last;
       });
+    }
+  }], [{
+    key: 'format',
+    value: function format(target) {
+      return target.toString().replace('.', ',');
     }
   }]);
 
@@ -12341,5 +12363,36 @@ var listingExchanges = function () {
 }();
 
 exports.default = listingExchanges;
+
+},{}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var result = function () {
+  function result(qtd, btc) {
+    _classCallCheck(this, result);
+
+    this.qtd = qtd;
+    this.btc = btc;
+  }
+
+  _createClass(result, [{
+    key: "printResult",
+    value: function printResult() {
+      return (this.qtd * this.btc).toFixed(2);
+    }
+  }]);
+
+  return result;
+}();
+
+exports.default = result;
 
 },{}]},{},[4]);

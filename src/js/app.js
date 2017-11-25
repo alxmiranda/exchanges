@@ -1,6 +1,7 @@
 import Vue from '../../node_modules/vue/dist/vue'  
 import VueResource from '../../node_modules/vue-resource/dist/vue-resource'
 import listingExchanges from "./listingExchanges"
+import result from "./result"
 
 Vue.use(VueResource)
 
@@ -10,6 +11,8 @@ let app = new Vue({
 
   data: {
     exchanges: null,
+    show: false,
+    total: null
   },
 
   created: function () {
@@ -19,7 +22,17 @@ let app = new Vue({
         this.exchanges = list.orderList();
       })
     }, (error) => {
-       consoel.log(error)
+       console.log(error)
     });
+  },
+
+  methods: {
+    result: function (event) {
+      let qtd = event.target.parentElement.querySelector("input").value;
+      let btc = event.target.dataset.value;
+      let fun = new result(qtd, btc);
+      this.total = fun.printResult();
+    }
   }
 })
+

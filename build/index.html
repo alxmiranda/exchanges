@@ -4,21 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="build/css/style.css"> -->
   <title>Document</title>
+
 </head>
 <body>
 
   <main id="app">
+    <transition name="slide-fade">
+      <div v-if="show">
+        {{ total }}
+        <button @click="show = !show">comprar</button>
+      </div>
+    </transition>
+
     <ul class="list-exchanges">
       <li v-for="exchange in exchanges">
         <hgroup>
           <h1>{{ exchange.name }}</h1>
           <h2>{{ exchange.last }}</h2>
         </hgroup>
+
+        <div class="listexchange__qtd">
+          <input type="text">
+          <button v-on:click="result" :data-value="exchange.last" @click="show = !show">comprar</button>
+        </div>
       </li>
     </ul>
   </main>
-
+  
   <script src="./build/js/script.js"></script>
 </body>
 </html>

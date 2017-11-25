@@ -3,8 +3,13 @@ class listingExchanges {
     this.data = data
   }
   
+  static format (target) {
+    return target.toString().replace('.', ',')
+  }
+
   orderList () {
     let arr = [];
+
     for (let item in this.data) {
       arr.push(
         {
@@ -13,6 +18,7 @@ class listingExchanges {
         }
       )
     }
+    
     return arr.sort((a, b) => {
       return a.last - b.last
     })
