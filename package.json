@@ -12,7 +12,7 @@
     "build-html": "cp src/index.html build/",
     "w-js": "watchify src/js/app.js -t babelify -o build/js/script.js",
     "w-css": "stylus -w src/stylus/style.styl -o build/css/style.css",
-    "preinstall": "npm install -g stylus && npm install -g browserify && mkdir build\\js build\\css"
+    "preinstall": "npm install -g stylus && npm install -g browserify"
   },
   "author": "Alex Miranda",
   "license": "ISC",
