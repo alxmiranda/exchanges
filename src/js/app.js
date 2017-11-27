@@ -33,6 +33,6 @@ let app = new Vue({
       let fun = new result(qtd, btc);
       this.total = fun.printResult();
     }
-  }
+  },
 })
 

@@ -12319,7 +12319,7 @@ var app = new _vue2.default({
 });
 
 },{"../../node_modules/vue-resource/dist/vue-resource":2,"../../node_modules/vue/dist/vue":3,"./listingExchanges":5,"./result":6}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -12337,13 +12337,13 @@ var listingExchanges = function () {
   }
 
   _createClass(listingExchanges, [{
-    key: 'orderList',
+    key: "orderList",
     value: function orderList() {
       var arr = [];
 
       for (var item in this.data) {
         arr.push({
-          name: '' + item,
+          name: "" + item,
           last: this.data[item].last
         });
       }
@@ -12351,11 +12351,6 @@ var listingExchanges = function () {
       return arr.sort(function (a, b) {
         return a.last - b.last;
       });
-    }
-  }], [{
-    key: 'format',
-    value: function format(target) {
-      return target.toString().replace('.', ',');
     }
   }]);
 

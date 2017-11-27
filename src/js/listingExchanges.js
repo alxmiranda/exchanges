@@ -3,10 +3,6 @@ class listingExchanges {
     this.data = data
   }
   
-  static format (target) {
-    return target.toString().replace('.', ',')
-  }
-
   orderList () {
     let arr = [];
 
