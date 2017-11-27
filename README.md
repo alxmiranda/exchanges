@@ -10,7 +10,9 @@ npm run start
 ```
 
 ## Para buildar
-- npm run build
+```js
+npm run build
+```
 
 ## Dependencias globais
 - npm
